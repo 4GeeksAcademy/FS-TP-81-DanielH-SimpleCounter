@@ -1,13 +1,14 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-// include your styles into the webpack bundle
 import "../styles/index.css";
+import SimpleCounter from "./SimpleCounter";
 
-//import your own components
-import Home from "./component/home.jsx";
+let counter = 0;
+const root = ReactDOM.createRoot(document.getElementById('app'));
+setInterval(() => {
+  
+    counter++;
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
-
+    root.render(< SimpleCounter counter={counter} />);
+}, 1000);
